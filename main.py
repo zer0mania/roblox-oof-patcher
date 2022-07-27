@@ -1,6 +1,7 @@
 import glob
 import os
 import sys
+import requests
 
 print('''
                                                ____               __       __             
@@ -26,9 +27,7 @@ def resource_path(relative_path):
 list_of_files = glob.glob(os.path.expanduser('~') + '\AppData\Local\Roblox\Versions\*')
 latest_dir = max(list_of_files, key=os.path.getctime)
 
-with open(resource_path('ouch.ogg'), 'rb') as f:
-    s = f.read()
-    f.close()
+s = requests.get('https://github.com/zer0mania/roblox-oof-patcher/raw/main/ouch.ogg').content
 
 with open(latest_dir + '\content\sounds\ouch.ogg', 'wb') as f:
     f.truncate(0)
