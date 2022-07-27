@@ -1,1 +1,1 @@
-pyinstaller --onefile --add-data="ouch.ogg;." binary.py
+pyinstaller --onefile --add-data="ouch.ogg;." main.py
